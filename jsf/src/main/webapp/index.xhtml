@@ -1,0 +1,65 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+        "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://java.sun.com/jsf/html"
+      xmlns:f="http://java.sun.com/jsf/core"
+      xmlns:ui="http://xmlns.jcp.org/jsf/facelets">
+<h:body>
+
+    <ui:composition template="template.xhtml">
+        <ui:define name="conteudo">
+            <h1>Livros</h1>
+            <h:form>
+                <h:commandLink value="Cadastrar" action="#{livroController.prepararNovo}"/>
+            </h:form>
+            <br/>
+            <h:dataTable var="livro" value="#{livroController.livros}">
+                <h:column>
+                    <f:facet name="header">
+                        <h:outputText value="Id"/>
+                    </f:facet>
+                    <h:outputText value="#{livro.id}"/>
+                </h:column>
+
+                <h:column>
+                    <f:facet name="header">
+                        <h:outputText value="Título"/>
+                    </f:facet>
+                    <h:outputText value="#{livro.titulo}"/>
+                </h:column>
+                <h:column>
+                    <f:facet name="header">
+                        <h:outputText value="Autor"/>
+                    </f:facet>
+                    <h:outputText value="#{livro.autor}"/>
+                </h:column>
+                <h:column>
+                    <f:facet name="header">
+                        <h:outputText value="Categoria"/>
+                    </f:facet>
+                    <h:outputText value="#{livro.categoria}"/>
+                </h:column>
+                <h:column>
+                    <f:facet name="header">
+                        <h:outputText value="Alterar"/>
+                    </f:facet>
+                    <h:form>
+                        <h:commandButton action="#{livroController.prepararAtualizacao(livro)}" value="Alterar"/>
+                    </h:form>
+                </h:column>
+                <h:column>
+                    <f:facet name="header">
+                        <h:outputText value="Excluir"/>
+                    </f:facet>
+                    <h:form>
+                        <h:commandButton action="#{livroController.excluir(livro.id)}" value="Excluir"/>
+                    </h:form>
+                </h:column>
+            </h:dataTable>
+        </ui:define>
+    </ui:composition>
+
+</h:body>
+
+</html>
