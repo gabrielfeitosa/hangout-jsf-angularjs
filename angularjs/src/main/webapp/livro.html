@@ -1,7 +1,8 @@
 <h1>Formulário</h1>
 <form name="livroForm" ng-submit="$ctrl.submeter()">
     <label>Título: </label>
-    <input type="text" ng-model="$ctrl.livro.titulo">
+    <input type="text" name="titulo" ng-model="$ctrl.livro.titulo" required>
+    <span ng-show="!livroForm.titulo.$pristine && livroForm.titulo.$invalid" style="color:red">Campo obrigatório</span>
     <br>
     <label>Autor: </label>
     <input type="text" ng-model="$ctrl.livro.autor">
@@ -14,6 +15,6 @@
         <option value="Terror">Terror</option>
     </select>
     <br>
-    <button type="submit">Submeter</button>
+    <button type="submit" >Submeter</button>
     <a ui-sref="home">voltar</a>
 </form>

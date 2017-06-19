@@ -12,7 +12,10 @@
             <h1>Formulário</h1>
             <h:form>
                 <h:outputLabel value="Título:"></h:outputLabel>&nbsp;
-                <h:inputText value="#{livroController.livro.titulo}"/><br/>
+                <h:inputText id="titulo" value="#{livroController.livro.titulo}" required="true"
+                             requiredMessage="Campo obrigatório"/>
+                <h:message for="titulo" style="color:red"/>
+                <br/>
                 <h:outputLabel value="Autor:"></h:outputLabel>&nbsp;
                 <h:inputText value="#{livroController.livro.autor}"/><br/>
                 <h:outputLabel value="Categoria:"> </h:outputLabel>&nbsp;

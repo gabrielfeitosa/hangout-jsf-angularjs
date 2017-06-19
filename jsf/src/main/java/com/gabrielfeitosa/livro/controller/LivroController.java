@@ -14,9 +14,9 @@ import java.util.Map;
 public class LivroController {
 
     private Livro livro;
-    private Map<Integer, Livro> livros = new HashMap<>();
+    private static Map<Integer, Livro> livros = new HashMap<>();
 
-    public LivroController() {
+    static {
         for(int i = 0; i< 3; i++){
             Livro livro = new Livro("Livro "+i, "Autor "+i, i % 2 == 0 ? "Drama": "Comédia");
             livros.put(livro.getId(), livro);
@@ -28,7 +28,7 @@ public class LivroController {
     }
 
     public Livro getLivro() {
-        return livro;
+        return this.livro;
     }
 
     public void setLivro(Livro livro) {
@@ -36,7 +36,7 @@ public class LivroController {
     }
 
     public String prepararNovo(){
-        livro = new Livro();
+        this.livro = new Livro();
         return "manter";
     }
 
@@ -48,7 +48,6 @@ public class LivroController {
     public String excluir(Integer id){
         livros.remove(id);
         return "index";
-
     }
 
     public String submeter(){
