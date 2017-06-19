@@ -1,0 +1,21 @@
+<h1>Livros</h1>
+<a ui-sref="adicionar">Cadastrar</a>
+<table>
+    <thead>
+    <tr>
+        <th>Id</th>
+        <th>Título</th>
+        <th>Autor</th>
+        <th>Categoria</th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr ng-repeat="livro in $ctrl.livros">
+        <td>{{livro.id}}</td>
+        <td>{{livro.titulo}}</td>
+        <td>{{livro.autor}}</td>
+        <td>{{livro.categoria}}</td>
+        <td><a ui-sref="alterar({ livroId: livro.id })">Editar</a>&nbsp;<a href ng-click="$ctrl.excluir($index)">Excluir</a></td>
+    </tr>
+    </tbody>
+</table>

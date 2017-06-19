@@ -41,7 +41,7 @@ public class LivroController {
     @Path("/{id}")
     public Response excluir(@PathParam("id") Integer id){
         livros.remove(id);
-        return Response.status(202).entity("Livro excluido com sucesso!").build();
+        return Response.accepted().build();
     }
 
     @POST
