@@ -5,13 +5,26 @@
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-
+    <link rel="stylesheet" href="css/bootstrap.min.css">
     <title>JSF -> AngularJS</title>
+    <style>
+        .obrigatorio::after{
+            content: "*";
+            color: red;
+        }
+    </style>
 </head>
 
-<body>
+<body class="container">
 
-<ui-view></ui-view>
+<div class="row">
+    <div class="col-md-2"></div>
+    <div class="col-md-8">
+        <ui-view></ui-view>
+    </div>
+    <div class="col-md-2"></div>
+</div>
+
 
 <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.4/angular.min.js"></script>
 <script src="//unpkg.com/angular-ui-router/release/angular-ui-router.min.js"></script>

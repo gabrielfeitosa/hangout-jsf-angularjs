@@ -1,6 +1,6 @@
 <h1>Livros</h1>
-<a ui-sref="adicionar">Cadastrar</a>
-<table>
+<a Class="btn btn-primary btn-sm" ui-sref="adicionar">Cadastrar livro</a>
+<table class="table">
     <thead>
     <tr>
         <th>Id</th>
@@ -15,7 +15,7 @@
         <td>{{livro.titulo}}</td>
         <td>{{livro.autor}}</td>
         <td>{{livro.categoria}}</td>
-        <td><a ui-sref="alterar({ livroId: livro.id })">Editar</a>&nbsp;<a href ng-click="$ctrl.excluir($index)">Excluir</a></td>
+        <td><a class="btn btn-default" ui-sref="alterar({ livroId: livro.id })">Editar</a>&nbsp;<a class="btn btn-danger" href ng-click="$ctrl.excluir($index)">Excluir</a></td>
     </tr>
     </tbody>
 </table>

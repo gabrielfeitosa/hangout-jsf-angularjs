@@ -5,9 +5,16 @@
       xmlns:h="http://java.sun.com/jsf/html"
       xmlns:ui="http://xmlns.jcp.org/jsf/facelets">
 <h:head>
+    <h:outputStylesheet library="bootstrap" name="css/bootstrap.min.css" />
     <title>JSF -> AngularJS</title>
 </h:head>
-<h:body>
+<h:body styleClass="container">
+    <div class="row">
+        <div class="col-md-2"></div>
+        <div class="col-md-8">
         <ui:insert name="conteudo"></ui:insert>
+        </div>
+        <div class="col-md-2"></div>
+    </div>
 </h:body>
 </html>

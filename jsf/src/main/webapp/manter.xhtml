@@ -11,22 +11,28 @@
         <ui:define name="conteudo">
             <h1>Formulário</h1>
             <h:form>
-                <h:outputLabel value="Título:"></h:outputLabel>&nbsp;
-                <h:inputText id="titulo" value="#{livroController.livro.titulo}" required="true"
-                             requiredMessage="Campo obrigatório"/>
-                <h:message for="titulo" style="color:red"/>
-                <br/>
-                <h:outputLabel value="Autor:"></h:outputLabel>&nbsp;
-                <h:inputText value="#{livroController.livro.autor}"/><br/>
-                <h:outputLabel value="Categoria:"> </h:outputLabel>&nbsp;
-                <h:selectOneMenu value="#{livroController.livro.categoria}">
-                    <f:selectItem itemLabel="Comédia" itemValue="Comédia"/>
-                    <f:selectItem itemLabel="Drama" itemValue="Drama"/>
-                    <f:selectItem itemLabel="Suspense" itemValue="Suspense"/>
-                    <f:selectItem itemLabel="Terror" itemValue="Terror"/>
-                </h:selectOneMenu>
-                <br/><br/>
-                <h:commandButton action="#{livroController.submeter}" value="Submeter"/>
+                <div class="form-group">
+                    <label for="titulo">Título</label>
+                    <h:inputText styleClass="form-control" id="titulo" value="#{livroController.livro.titulo}"
+                                 required="true"
+                                 requiredMessage="Campo obrigatório"/>
+                    <h:message for="titulo" styleClass="help-block" style="color:red"/>
+                </div>
+                <div class="form-group">
+                    <label for="autor">Autor</label>
+                    <h:inputText styleClass="form-control" id="autor" value="#{livroController.livro.autor}"/>
+                </div>
+                <div class="form-group">
+                    <label for="categoria">Categoria</label>
+                    <h:selectOneMenu styleClass="form-control" id="categoria"
+                                     value="#{livroController.livro.categoria}">
+                        <f:selectItem itemLabel="Comédia" itemValue="Comédia"/>
+                        <f:selectItem itemLabel="Drama" itemValue="Drama"/>
+                        <f:selectItem itemLabel="Suspense" itemValue="Suspense"/>
+                        <f:selectItem itemLabel="Terror" itemValue="Terror"/>
+                    </h:selectOneMenu>
+                </div>
+                <h:commandButton styleClass="btn btn-primary" action="#{livroController.submeter}" value="Submeter"/>
                 <h:commandLink action="index" value="Voltar" immediate="true"/>
             </h:form>
         </ui:define>
