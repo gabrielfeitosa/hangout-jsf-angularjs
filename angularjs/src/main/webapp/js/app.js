@@ -7,14 +7,7 @@
                 {
                     name: 'home',
                     url: '/',
-                    component: 'home',
-                    resolve: {
-                        livros: function ($http) {
-                            return $http.get('api/livro').then(function (response) {
-                                return response.data;
-                            });
-                        }
-                    }
+                    component: 'home'
                 },
                 {
                     name: 'adicionar',
@@ -24,14 +17,7 @@
                 {
                     name: 'alterar',
                     url: '/livro/{livroId}',
-                    component: 'alterar',
-                    resolve: {
-                        livro: function ($http, $transition$) {
-                            return $http.get('api/livro/' + $transition$.params().livroId).then(function (response) {
-                                return response.data;
-                            });
-                        }
-                    }
+                    component: 'alterar'
                 }
             ];
 
